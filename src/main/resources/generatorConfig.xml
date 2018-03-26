@@ -12,13 +12,14 @@
             <property name="suppressDate" value="true"/>
         </commentGenerator>
 
-        <jdbcConnection userId="root" password="123456" driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://127.0.0.1:3306/keqq"/>
+        <!--<jdbcConnection userId="root" password="123456" driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://127.0.0.1:3306/keqq"/>-->
+        <jdbcConnection userId="root" password="mysql+4141" driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://api.d.mizhuw.com:3306/mz_prod"/>
 
         <javaTypeResolver>
             <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
 
-        <javaModelGenerator targetPackage="com.sam.web.keqq.model" targetProject=".">
+        <javaModelGenerator targetPackage="com.sam.web.mizhu.model" targetProject=".">
             <property name="enableSubPackages" value="false"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
@@ -27,11 +28,13 @@
             <property name="enableSubPackages" value="false"/>
         </sqlMapGenerator>
 
-        <javaClientGenerator targetPackage="com.sam.web.keqq.dao" type="XMLMAPPER" targetProject=".">
+        <javaClientGenerator targetPackage="com.sam.web.mizhu.dao" type="XMLMAPPER" targetProject=".">
             <property name="enableSubPackages" value="false"/>
         </javaClientGenerator>
 
-        <table tableName="lesson_source" enableCountByExample="false" enableDeleteByExample="false"
+        <table tableName="good" enableCountByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" enableUpdateByExample="false"/>
+        <table tableName="image" enableCountByExample="false" enableDeleteByExample="false"
                enableSelectByExample="false" enableUpdateByExample="false"/>
     </context>
 </generatorConfiguration>

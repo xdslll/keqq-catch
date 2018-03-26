@@ -19,7 +19,7 @@ public abstract class BaseMapperImpl<T> extends BaseMapper implements Mapper<T> 
     }
 
     @Override
-    public List<T> selectByParam(Map<String, String> params) {
+    public List<T> selectByParam(Map<String, Object> params) {
         return _list(getMapper() + ".selectByParam", params);
     }
 
@@ -60,12 +60,26 @@ public abstract class BaseMapperImpl<T> extends BaseMapper implements Mapper<T> 
         return _operator(getMapper() + ".updateByPrimaryKey", data, UPDATE);
     }
 
-    protected T first(Map<String, String> params) {
+    protected T first(Map<String, Object> params) {
         List<T> list = selectByParam(params);
         if (list != null && list.size() > 0) {
             return list.get(0);
         } else {
             return null;
         }
+    }
+
+    public List<T> selectAll() {
+        return _list(getMapper() + ".selectAll", null);
+    }
+
+    @Override
+    public boolean exists(T data) {
+        return false;
+    }
+
+    @Override
+    public T selectByName(T data) {
+        return null;
     }
 }

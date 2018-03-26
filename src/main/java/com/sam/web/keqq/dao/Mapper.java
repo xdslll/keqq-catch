@@ -14,7 +14,7 @@ public interface Mapper<T> {
 
     boolean exists(T data);
 
-    List<T> selectByParam(Map<String, String> params);
+    List<T> selectByParam(Map<String, Object> params);
 
     T selectByName(T data);
 

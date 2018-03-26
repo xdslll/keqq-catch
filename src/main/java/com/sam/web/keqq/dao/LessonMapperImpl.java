@@ -49,20 +49,20 @@ public class LessonMapperImpl extends BaseMapper implements LessonMapper {
     }
 
     @Override
-    public List<Lesson> selectByParam(Map<String, String> params) {
+    public List<Lesson> selectByParam(Map<String, Object> params) {
         return _list(MAPPER_LESSON + ".selectByParam", params);
     }
 
     @Override
     public Lesson selectByName(Lesson lesson) {
-        HashMap<String, String> param = new HashMap<>();
+        HashMap<String, Object> param = new HashMap<>();
         param.put("cid", String.valueOf(lesson.getCid()));
         return selectByParam(param).get(0);
     }
 
     @Override
     public boolean exists(Lesson lesson) {
-        HashMap<String, String> param = new HashMap<>();
+        HashMap<String, Object> param = new HashMap<>();
         param.put("cid", String.valueOf(lesson.getCid()));
         return selectByParam(param).size() > 0;
     }

@@ -14,14 +14,14 @@ public class LessonSourceMapperImpl extends BaseMapperImpl<LessonSource> impleme
 
     @Override
     public boolean exists(LessonSource data) {
-        Map<String, String> params = new HashMap<>();
+        Map<String, Object> params = new HashMap<>();
         params.put("short_name", data.getShort_name());
         return selectByParam(params).size() > 0;
     }
 
     @Override
     public LessonSource selectByName(LessonSource data) {
-        Map<String, String> params = new HashMap<>();
+        Map<String, Object> params = new HashMap<>();
         params.put("short_name", data.getShort_name());
         return first(params);
     }

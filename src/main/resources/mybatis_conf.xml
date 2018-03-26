@@ -7,14 +7,21 @@
             <!-- 配置数据库连接信息 -->
             <dataSource type="POOLED">
                 <property name="driver" value="com.mysql.jdbc.Driver" />
-                <property name="url" value="jdbc:mysql://localhost:3306/keqq?useUnicode=true&amp;characterEncoding=UTF-8&amp;zeroDateTimeBehavior=convertToNull" />
+                <!--<property name="url" value="jdbc:mysql://localhost:3306/keqq?useUnicode=true&amp;characterEncoding=UTF-8&amp;zeroDateTimeBehavior=convertToNull" />-->
+                <!--<property name="url" value="jdbc:mysql://www.mac-bigdata-01.com:3306/keqq?useUnicode=true&amp;characterEncoding=UTF-8&amp;zeroDateTimeBehavior=convertToNull" />-->
+                <!-- 米筑数据库 -->
+                <property name="url" value="jdbc:mysql://api.d.mizhuw.com:3306/mz_prod?useUnicode=true&amp;characterEncoding=UTF-8&amp;zeroDateTimeBehavior=convertToNull" />
                 <property name="username" value="root" />
-                <property name="password" value="123456" />
+                <!-- 米筑数据库密码 -->
+                <!--<property name="password" value="123456" />-->
+                <property name="password" value="mysql+4141" />
             </dataSource>
         </environment>
     </environments>
     <mappers>
         <mapper resource="mapper/LessonMapper.xml"/>
         <mapper resource="mapper/LessonSourceMapper.xml"/>
+        <mapper resource="mapper/GoodMapper.xml"/>
+        <mapper resource="mapper/ImageMapper.xml"/>
     </mappers>
 </configuration>

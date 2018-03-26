@@ -55,7 +55,7 @@ public class KeqqCourseCatch implements NetworkCatch<List<Lesson>> {
                     lesson.setUrl("ke.qq.com/course/" + lesson.getCid());
                     //设置source
                     LessonSourceMapper lsm = new LessonSourceMapperImpl();
-                    Map<String, String> par = new HashMap<>();
+                    Map<String, Object> par = new HashMap<>();
                     par.put("aid", String.valueOf(lesson.getAid()));
                     List<LessonSource> lsList = lsm.selectByParam(par);
                     if (lsList != null && lsList.size() > 0) {
